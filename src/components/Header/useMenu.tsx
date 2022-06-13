@@ -275,6 +275,11 @@ const useMenu: UseMenu = () => {
           title: 'Pools',
           link: `/analytics/pools`,
         },
+        {
+          key: 'kashi',
+          title: 'Kashi',
+          link: `/analytics/kashi`,
+        },
       ],
     }
 
