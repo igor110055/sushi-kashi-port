@@ -113,48 +113,48 @@ const KashiPairMarketTableRowLoading = () => (
     <td className="py-3 pl-8 pr-2">
       <div className="md:flex">
         <div>
-          <div className="inline-block w-8 h-8 rounded-full loading"></div>
-          <div className="inline-block w-8 h-8 -ml-2 rounded-full loading"></div>
+          <div className="inline-block w-8 h-8 rounded-full animate-pulse"></div>
+          <div className="inline-block w-8 h-8 -ml-2 rounded-full animate-pulse bg-dark-800"></div>
         </div>
         <div className="md:ml-2">
           <div>
-            <div className="inline-block w-24 h-5 rounded loading"></div>
+            <div className="inline-block w-24 h-5 rounded animate-pulse bg-dark-800"></div>
           </div>
           <div>
-            <div className="inline-block w-12 h-4 rounded loading"></div>
+            <div className="inline-block w-12 h-4 rounded animate-pulse bg-dark-800"></div>
           </div>
         </div>
       </div>
     </td>
     <td className="px-2 py-3 text-right">
       <div>
-        <div className="inline-block w-32 h-5 rounded loading"></div>
+        <div className="inline-block w-32 h-5 rounded animate-pulse bg-dark-800"></div>
       </div>
       <div>
-        <div className="inline-block h-4 rounded loading w-28"></div>
-      </div>
-    </td>
-    <td className="px-2 py-3 text-right">
-      <div>
-        <div className="inline-block w-32 h-5 rounded loading"></div>
-      </div>
-      <div>
-        <div className="inline-block h-4 rounded loading w-28"></div>
+        <div className="inline-block h-4 rounded animate-pulse bg-dark-800 w-28"></div>
       </div>
     </td>
     <td className="px-2 py-3 text-right">
-      <div className="inline-block w-12 h-5 rounded loading"></div>
+      <div>
+        <div className="inline-block w-32 h-5 rounded animate-pulse bg-dark-800"></div>
+      </div>
+      <div>
+        <div className="inline-block h-4 rounded animate-pulse bg-dark-800 w-28"></div>
+      </div>
+    </td>
+    <td className="px-2 py-3 text-right">
+      <div className="inline-block w-12 h-5 rounded animate-pulse bg-dark-800"></div>
     </td>
     <td className="px-2 py-3 text-right">
       <div>
-        <div className="inline-block w-32 h-5 rounded loading"></div>
+        <div className="inline-block w-32 h-5 rounded animate-pulse bg-dark-800"></div>
       </div>
       <div>
-        <div className="inline-block h-4 rounded loading w-28"></div>
+        <div className="inline-block h-4 rounded animate-pulse bg-dark-800 w-28"></div>
       </div>
     </td>
     <td className="py-3 pl-2 pr-8 text-right">
-      <div className="inline-block w-12 h-5 rounded loading"></div>
+      <div className="inline-block w-12 h-5 rounded animate-pulse bg-dark-800"></div>
     </td>
   </tr>
 )
@@ -168,8 +168,8 @@ const KashiPairMarketTableRow = ({ data, index }: { data: KashiPair; index: numb
 
   return (
     <tr
-      onClick={() => goto(`/pair/${data.id}`)}
-      className="border-t border-l-2 border-transparent cursor-pointer border-t-gray-900 hover:border-l-primary1-400"
+      onClick={() => goto(`/analytics/kashi/pairs/${data.id}`)}
+      className="border-t border-l-2 border-transparent cursor-pointer border-t-gray-900 hover:bg-dark-900"
     >
       <td className="py-3 pl-8 pr-2">
         <div className="md:flex">

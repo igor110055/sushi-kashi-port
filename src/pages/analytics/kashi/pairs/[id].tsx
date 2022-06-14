@@ -3,11 +3,11 @@ import { useLingui } from '@lingui/react'
 import Typography from 'app/components/Typography'
 import { AnalyticsKashiApolloContextProvider } from 'app/features/analytics/kashi/context/ApolloContext'
 import { AnalyticsKashiAppContextProvider } from 'app/features/analytics/kashi/context/AppContext'
-import KashiPairsView from 'app/features/analytics/kashi/views/KashiPairsView'
+import KashiPairView from 'app/features/analytics/kashi/views/KashiPairView'
 import { TridentBody, TridentHeader } from 'app/layouts/Trident'
 import React, { FC } from 'react'
 
-const AnalyticsKashiPage: FC = () => {
+const AnalyticsKashiPairPage: FC = () => {
   const { i18n } = useLingui()
   return (
     <>
@@ -24,7 +24,7 @@ const AnalyticsKashiPage: FC = () => {
       <TridentBody>
         <AnalyticsKashiAppContextProvider>
           <AnalyticsKashiApolloContextProvider>
-            <KashiPairsView />
+            <KashiPairView />
           </AnalyticsKashiApolloContextProvider>
         </AnalyticsKashiAppContextProvider>
       </TridentBody>
@@ -32,4 +32,4 @@ const AnalyticsKashiPage: FC = () => {
   )
 }
 
-export default AnalyticsKashiPage
+export default AnalyticsKashiPairPage

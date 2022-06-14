@@ -12,7 +12,7 @@ import { BentoBox } from '../types/BentoBox'
 import { KashiPair } from '../types/KashiPair'
 import { KashiPairDayData, KashiPairDayDataMap } from '../types/KashiPairDayData'
 
-const KashiPairs = () => {
+const KashiPairsView = () => {
   const { loading: loadingKashiPairs, error, data: dataKashiPairs } = useQuery(getKashiPairsQuery)
 
   const { loading: loadingKashiPairsDayData0, data: dataKashiPairsDayData0 } = useQuery(getKashiPairsDayDataQuery, {
@@ -176,4 +176,4 @@ const KashiPairs = () => {
     </>
   )
 }
-export default KashiPairs
+export default KashiPairsView
