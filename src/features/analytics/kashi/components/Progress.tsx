@@ -22,7 +22,7 @@ const classByColor = {
   },
 }
 
-const KashiProgress = ({
+const Progress = ({
   loading = false,
   color = 'green',
   progress = 0,
@@ -85,4 +85,4 @@ const KashiProgress = ({
   )
 }
 
-export default KashiProgress
+export default Progress

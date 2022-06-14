@@ -3,7 +3,7 @@ import KashiMediumRiskLendingPair from 'app/features/kashi/KashiMediumRiskLendin
 import { formatNumber } from 'app/functions'
 import classNames from 'classnames'
 
-import KashiProgress from './KashiProgress'
+import Progress from './Progress'
 
 type AttributesByBorrowType = {
   progressColor: 'green' | 'pink' | 'blue'
@@ -95,13 +95,13 @@ const KashiPairTotalCard = ({
         <div className="mb-4 text-sm font-medium">Top 3 Markets</div>
         {isLoading ? (
           <>
-            <KashiProgress loading={isLoading} containerClass="mb-4" />
-            <KashiProgress loading={isLoading} containerClass="mb-4" />
-            <KashiProgress loading={isLoading} containerClass="mb-4" />
+            <Progress loading={isLoading} containerClass="mb-4" />
+            <Progress loading={isLoading} containerClass="mb-4" />
+            <Progress loading={isLoading} containerClass="mb-4" />
           </>
         ) : (
           top3.map((market) => (
-            <KashiProgress
+            <Progress
               loading={loading}
               key={market.address}
               containerClass="mb-4"

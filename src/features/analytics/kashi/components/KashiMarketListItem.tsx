@@ -9,7 +9,7 @@ import { classNames, formatNumber, formatPercent } from 'app/functions'
 import Link from 'next/link'
 import React, { FC, memo, useMemo } from 'react'
 
-import KashiMediumRiskLendingPair from '../../kashi/KashiMediumRiskLendingPair'
+import KashiMediumRiskLendingPair from '../../../kashi/KashiMediumRiskLendingPair'
 
 interface KashiMarketListItem {
   market: KashiMediumRiskLendingPair

@@ -8,20 +8,18 @@ import { TABLE_TR_TH_CLASSNAME, TABLE_WRAPPER_DIV_CLASSNAME } from 'app/features
 import { classNames } from 'app/functions'
 import { useFuse, useSortableData } from 'app/hooks'
 import { useInfiniteScroll } from 'app/hooks/useInfiniteScroll'
-import { useActiveWeb3React } from 'app/services/web3'
-import React, { FC, memo, ReactNode } from 'react'
+import React, { FC, memo } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
-import { useKashiMediumRiskLendingPairs, useKashiPairAddresses } from '../../kashi/hooks'
-import { KashiMediumRiskLendingPair } from '../../kashi/KashiMediumRiskLendingPair'
-import KashiPairTotalCard from './KashiPairTotalCard'
+import { useKashiMediumRiskLendingPairs, useKashiPairAddresses } from '../../../kashi/hooks'
+import { KashiMediumRiskLendingPair } from '../../../kashi/KashiMediumRiskLendingPair'
+import KashiPairTotalCard from './KashiPairTotalCardEx'
 
 interface KashiMarketList {}
 
 const KashiMarketList: FC<KashiMarketList> = () => {
-  const { account } = useActiveWeb3React()
   const addresses = useKashiPairAddresses()
-  const markets = useKashiMediumRiskLendingPairs(account, addresses)
+  const markets = useKashiMediumRiskLendingPairs(null, addresses)
 
   const { i18n } = useLingui()
   const { result, term, search } = useFuse<KashiMediumRiskLendingPair>({
@@ -145,12 +143,9 @@ const KashiMarketList: FC<KashiMarketList> = () => {
             hasMore={numDisplayed <= items.length}
             loader={null}
           >
-            <>
-              {items.slice(0, numDisplayed).reduce<ReactNode[]>((acc, market, index) => {
-                if (market) acc.push(<KashiMarketListItem market={market} key={index} i18n={i18n} />)
-                return acc
-              }, [])}
-            </>
+            {items.slice(0, numDisplayed).map((market, index) => (
+              <KashiMarketListItem market={market} key={index} i18n={i18n} />
+            ))}
           </InfiniteScroll>
         </div>
       </div>

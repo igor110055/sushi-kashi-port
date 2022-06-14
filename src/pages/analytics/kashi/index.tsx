@@ -1,7 +1,9 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import Typography from 'app/components/Typography'
-import KashiMarketList from 'app/features/analytics/kashi/KashiMarketList'
+import { AnalyticsKashiApolloContextProvider } from 'app/features/analytics/kashi/context/ApolloContext'
+import { AnalyticsKashiAppContextProvider } from 'app/features/analytics/kashi/context/AppContext'
+import KashiPairs from 'app/features/analytics/kashi/views/KashiPairs'
 import { TridentBody, TridentHeader } from 'app/layouts/Trident'
 import React, { FC } from 'react'
 
@@ -20,7 +22,11 @@ const AnalyticsKashiPage: FC = () => {
         </div>
       </TridentHeader>
       <TridentBody>
-        <KashiMarketList />
+        <AnalyticsKashiAppContextProvider>
+          <AnalyticsKashiApolloContextProvider>
+            <KashiPairs />
+          </AnalyticsKashiApolloContextProvider>
+        </AnalyticsKashiAppContextProvider>
       </TridentBody>
     </>
   )
