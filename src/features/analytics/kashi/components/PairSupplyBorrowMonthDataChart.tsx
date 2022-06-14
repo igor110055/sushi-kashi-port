@@ -135,12 +135,12 @@ const PairSupplyBorrowMonthDataChart = ({
       <div className="pt-6 text-lg font-medium text-center">{title}</div>
       {!data || data.length === 0 ? (
         <div>
-          <div className="mx-4 my-12 rounded animate-pulse bg-dark-800" style={{ height: '1px' }}></div>
-          <div className="mx-4 my-12 rounded animate-pulse bg-dark-800" style={{ height: '1px' }}></div>
-          <div className="mx-4 my-12 rounded animate-pulse bg-dark-800" style={{ height: '1px' }}></div>
-          <div className="mx-4 my-12 rounded animate-pulse bg-dark-800" style={{ height: '1px' }}></div>
-          <div className="mx-4 my-12 rounded animate-pulse bg-dark-800" style={{ height: '1px' }}></div>
-          <div className="mx-4 my-12 rounded animate-pulse bg-dark-800" style={{ height: '1px' }}></div>
+          <div className="mx-4 my-12 rounded animate-pulse bg-dark-700" style={{ height: '1px' }}></div>
+          <div className="mx-4 my-12 rounded animate-pulse bg-dark-700" style={{ height: '1px' }}></div>
+          <div className="mx-4 my-12 rounded animate-pulse bg-dark-700" style={{ height: '1px' }}></div>
+          <div className="mx-4 my-12 rounded animate-pulse bg-dark-700" style={{ height: '1px' }}></div>
+          <div className="mx-4 my-12 rounded animate-pulse bg-dark-700" style={{ height: '1px' }}></div>
+          <div className="mx-4 my-12 rounded animate-pulse bg-dark-700" style={{ height: '1px' }}></div>
         </div>
       ) : (
         <>

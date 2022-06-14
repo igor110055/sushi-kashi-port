@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { i18n } from '@lingui/core'
 import { useLingui } from '@lingui/react'
 import { BigNumber } from 'ethers'
 import { useRouter } from 'next/router'
@@ -12,7 +13,7 @@ import { KashiPair } from '../types/KashiPair'
 type OrderBy = 'asset' | 'collateral' | 'totalSupply' | 'totalAsset' | 'supplyAPY' | 'totalBorrow' | 'borrowAPY' | ''
 type OrderDirection = 'asc' | 'desc'
 
-const KashiPairMarketTableHead = ({
+const PairMarketTableHead = ({
   onSort,
   orderBy,
   orderDirection,
@@ -108,58 +109,58 @@ const KashiPairMarketTableHead = ({
   )
 }
 
-const KashiPairMarketTableRowLoading = () => (
+const PairMarketTableRowLoading = () => (
   <tr className="border-t border-l-2 border-transparent cursor-pointer border-t-gray-900 hover:border-l-primary1-400">
     <td className="py-3 pl-8 pr-2">
       <div className="md:flex">
         <div>
           <div className="inline-block w-8 h-8 rounded-full animate-pulse"></div>
-          <div className="inline-block w-8 h-8 -ml-2 rounded-full animate-pulse bg-dark-800"></div>
+          <div className="inline-block w-8 h-8 -ml-2 rounded-full animate-pulse bg-dark-700"></div>
         </div>
         <div className="md:ml-2">
           <div>
-            <div className="inline-block w-24 h-5 rounded animate-pulse bg-dark-800"></div>
+            <div className="inline-block w-24 h-5 rounded animate-pulse bg-dark-700"></div>
           </div>
           <div>
-            <div className="inline-block w-12 h-4 rounded animate-pulse bg-dark-800"></div>
+            <div className="inline-block w-12 h-4 rounded animate-pulse bg-dark-700"></div>
           </div>
         </div>
       </div>
     </td>
     <td className="px-2 py-3 text-right">
       <div>
-        <div className="inline-block w-32 h-5 rounded animate-pulse bg-dark-800"></div>
+        <div className="inline-block w-32 h-5 rounded animate-pulse bg-dark-700"></div>
       </div>
       <div>
-        <div className="inline-block h-4 rounded animate-pulse bg-dark-800 w-28"></div>
-      </div>
-    </td>
-    <td className="px-2 py-3 text-right">
-      <div>
-        <div className="inline-block w-32 h-5 rounded animate-pulse bg-dark-800"></div>
-      </div>
-      <div>
-        <div className="inline-block h-4 rounded animate-pulse bg-dark-800 w-28"></div>
+        <div className="inline-block h-4 rounded animate-pulse bg-dark-700 w-28"></div>
       </div>
     </td>
     <td className="px-2 py-3 text-right">
-      <div className="inline-block w-12 h-5 rounded animate-pulse bg-dark-800"></div>
+      <div>
+        <div className="inline-block w-32 h-5 rounded animate-pulse bg-dark-700"></div>
+      </div>
+      <div>
+        <div className="inline-block h-4 rounded animate-pulse bg-dark-700 w-28"></div>
+      </div>
+    </td>
+    <td className="px-2 py-3 text-right">
+      <div className="inline-block w-12 h-5 rounded animate-pulse bg-dark-700"></div>
     </td>
     <td className="px-2 py-3 text-right">
       <div>
-        <div className="inline-block w-32 h-5 rounded animate-pulse bg-dark-800"></div>
+        <div className="inline-block w-32 h-5 rounded animate-pulse bg-dark-700"></div>
       </div>
       <div>
-        <div className="inline-block h-4 rounded animate-pulse bg-dark-800 w-28"></div>
+        <div className="inline-block h-4 rounded animate-pulse bg-dark-700 w-28"></div>
       </div>
     </td>
     <td className="py-3 pl-2 pr-8 text-right">
-      <div className="inline-block w-12 h-5 rounded animate-pulse bg-dark-800"></div>
+      <div className="inline-block w-12 h-5 rounded animate-pulse bg-dark-700"></div>
     </td>
   </tr>
 )
 
-const KashiPairMarketTableRow = ({ data, index }: { data: KashiPair; index: number }) => {
+const PairMarketTableRow = ({ data, index }: { data: KashiPair; index: number }) => {
   const { tokenUtilService, handleLogoError } = useAppContext()
   const router = useRouter()
   const goto = (route: string) => {
@@ -255,7 +256,7 @@ const KashiPairMarketTableRow = ({ data, index }: { data: KashiPair; index: numb
   )
 }
 
-const KashiPairMarketTable = ({ loading = false, data = [] }: { loading?: boolean; data: KashiPair[] }) => {
+const PairMarketTable = ({ loading = false, data = [] }: { loading?: boolean; data: KashiPair[] }) => {
   const [orderBy, setOrderBy] = useState<OrderBy>('')
   const [orderDirection, setOrderDirection] = useState<OrderDirection>('desc')
 
@@ -361,20 +362,20 @@ const KashiPairMarketTable = ({ loading = false, data = [] }: { loading?: boolea
         <input
           type="text"
           className="w-full p-2 border rounded focus:outline-blue placeholder:text-low-emphesis border-dark-800 bg-dark-900"
-          placeholder="Search by Asset/Collateral..."
+          placeholder={i18n._('Search by Asset/Collateral...')}
           onChange={handleSearchChange}
         />
       </div>
       <table className="w-full pair-market-table">
         <thead>
-          <KashiPairMarketTableHead onSort={handleSort} orderBy={orderBy} orderDirection={orderDirection} />
+          <PairMarketTableHead onSort={handleSort} orderBy={orderBy} orderDirection={orderDirection} />
         </thead>
         {loading ? (
           <tbody>
-            <KashiPairMarketTableRowLoading />
-            <KashiPairMarketTableRowLoading />
-            <KashiPairMarketTableRowLoading />
-            <KashiPairMarketTableRowLoading />
+            <PairMarketTableRowLoading />
+            <PairMarketTableRowLoading />
+            <PairMarketTableRowLoading />
+            <PairMarketTableRowLoading />
           </tbody>
         ) : (
           <tbody>
@@ -387,7 +388,7 @@ const KashiPairMarketTable = ({ loading = false, data = [] }: { loading?: boolea
                 return false
               })
               .map((data, index) => (
-                <KashiPairMarketTableRow key={`${data.id}`} data={data} index={index} />
+                <PairMarketTableRow key={`${data.id}`} data={data} index={index} />
               ))}
           </tbody>
         )}
@@ -395,4 +396,4 @@ const KashiPairMarketTable = ({ loading = false, data = [] }: { loading?: boolea
     </div>
   )
 }
-export default KashiPairMarketTable
+export default PairMarketTable

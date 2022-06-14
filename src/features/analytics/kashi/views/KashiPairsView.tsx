@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client'
 import { BigNumber } from 'ethers'
 import { useEffect, useState } from 'react'
 
-import KashiPairMarketTable from '../components/KashiPairMarketTable'
+import PairMarketTable from '../components/PairMarketTable'
 import TotalCard from '../components/TotalCard'
 import TotalCompareChart from '../components/TotalCompareChart'
 import TotalDayDataChart from '../components/TotalDayDataChart'
@@ -171,7 +171,7 @@ const KashiPairsView = () => {
         </div>
       </div>
       <div className="container mx-auto mb-24">
-        <KashiPairMarketTable loading={loading || calculating} data={kashiPairs} />
+        <PairMarketTable loading={loading || calculating} data={kashiPairs} />
       </div>
     </>
   )

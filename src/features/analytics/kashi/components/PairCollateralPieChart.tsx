@@ -4,6 +4,7 @@ import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import { useRouter } from 'next/router'
 
+import TailwindConfig from '../config/tailwind'
 import { useAppContext } from '../context/AppContext'
 import { KashiPair } from '../types/KashiPair'
 
@@ -55,6 +56,7 @@ const PairCollateralPieChart = ({
     },
     chart: {
       type: 'pie',
+      backgroundColor: TailwindConfig.theme.colors['dark-900'],
     },
     colors: ['#10b981', '#2085ec', '#72b4eb', '#0a417a', '#8464a0', '#cea9bc', '#a855f7', '#323232'],
     series: getSeries(),
@@ -78,7 +80,7 @@ const PairCollateralPieChart = ({
     <div
       className={classNames({
         [containerClass]: true,
-        'bg-white shadow-lg rounded over overflow-hidden': true,
+        'bg-dark-900 shadow-lg rounded over overflow-hidden': true,
       })}
     >
       <div className="pt-6 text-lg font-medium text-center">{title}</div>

@@ -7,7 +7,7 @@ import KashiPairsView from 'app/features/analytics/kashi/views/KashiPairsView'
 import { TridentBody, TridentHeader } from 'app/layouts/Trident'
 import React, { FC } from 'react'
 
-const AnalyticsKashiPage: FC = () => {
+const AnalyticsKashiPairsPage: FC = () => {
   const { i18n } = useLingui()
   return (
     <>
@@ -32,4 +32,4 @@ const AnalyticsKashiPage: FC = () => {
   )
 }
 
-export default AnalyticsKashiPage
+export default AnalyticsKashiPairsPage

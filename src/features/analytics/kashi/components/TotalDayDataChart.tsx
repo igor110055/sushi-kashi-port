@@ -100,12 +100,12 @@ function TotalDayDataChart({ loading, data }: { loading: boolean; data: KashiPai
       <div className="pt-6 text-lg font-medium text-center">{i18n._('Total Supply & Total Borrow')}</div>
       {loading || !data || data.length === 0 ? (
         <div>
-          <div className="mx-4 my-12 rounded animate-pulse bg-dark-800" style={{ height: '1px' }}></div>
-          <div className="mx-4 my-12 rounded animate-pulse bg-dark-800" style={{ height: '1px' }}></div>
-          <div className="mx-4 my-12 rounded animate-pulse bg-dark-800" style={{ height: '1px' }}></div>
-          <div className="mx-4 my-12 rounded animate-pulse bg-dark-800" style={{ height: '1px' }}></div>
-          <div className="mx-4 my-12 rounded animate-pulse bg-dark-800" style={{ height: '1px' }}></div>
-          <div className="mx-4 my-12 rounded animate-pulse bg-dark-800" style={{ height: '1px' }}></div>
+          <div className="mx-4 my-12 rounded animate-pulse bg-dark-700" style={{ height: '1px' }}></div>
+          <div className="mx-4 my-12 rounded animate-pulse bg-dark-700" style={{ height: '1px' }}></div>
+          <div className="mx-4 my-12 rounded animate-pulse bg-dark-700" style={{ height: '1px' }}></div>
+          <div className="mx-4 my-12 rounded animate-pulse bg-dark-700" style={{ height: '1px' }}></div>
+          <div className="mx-4 my-12 rounded animate-pulse bg-dark-700" style={{ height: '1px' }}></div>
+          <div className="mx-4 my-12 rounded animate-pulse bg-dark-700" style={{ height: '1px' }}></div>
         </div>
       ) : (
         <>
