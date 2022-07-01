@@ -34,6 +34,8 @@ const CLIENTS = {
 export const AnalyticsKashiApolloContextProvider = ({ children }: { children: ReactNode }) => {
   const router = useRouter()
   const chainId = Number(router.query.chainId) as ChainId
+
+  // @ts-ignore
   const client = CLIENTS[chainId]
 
   if (!client) {
